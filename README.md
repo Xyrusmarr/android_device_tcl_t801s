@@ -1,0 +1,1 @@
+# android_device_tcl_t801s
