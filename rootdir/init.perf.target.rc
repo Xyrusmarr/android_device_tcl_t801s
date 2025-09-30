@@ -1,0 +1,45 @@
+on init
+    # add for memsense-dmcc
+    chown system system /sys/kernel/dmcc/enable
+    chmod 0666 /sys/kernel/dmcc/enable
+    chown system system /sys/kernel/dmcc/anon_target
+    chmod 0666 /sys/kernel/dmcc/anon_target
+    chown system system /sys/kernel/dmcc/avail_target
+    chmod 0666 /sys/kernel/dmcc/avail_target
+    chown system system /sys/kernel/dmcc/event
+    chmod 0666 /sys/kernel/dmcc/event
+    chown system system /sys/kernel/dmcc/free_size_min
+    chmod 0666 /sys/kernel/dmcc/free_size_min
+    chown system system /sys/kernel/dmcc/full_clean_size
+    chmod 0666 /sys/kernel/dmcc/full_clean_size
+    chown system system /sys/kernel/dmcc/idle_threshold
+    chmod 0666 /sys/kernel/dmcc/idle_threshold
+    chown system system /sys/kernel/dmcc/max_anon_clean_size
+    chmod 0666 /sys/kernel/dmcc/max_anon_clean_size
+    chown system system /sys/kernel/dmcc/swap_percent_low
+    chmod 0666 /sys/kernel/dmcc/swap_percent_low
+
+    #[TCT-ROM][PERF]Begin Added by yingbao.wang for background iolimit on  2019/06/20,20200319
+    write /dev/cpuset/top-app/prefer_cpu 1
+    write /dev/cpuset/background/cpus 5-6
+    write /dev/cpuset/easy-background/cpus 3,5-6
+    chmod 0666 /dev/iolimit/limit/iolimit.read_limit
+    chmod 0666 /dev/iolimit/limit/iolimit.write_limit
+    write /dev/iolimit/limit/iolimit.read_limit 62914560
+    write /dev/iolimit/limit/iolimit.write_limit 62914560
+    write /dev/iolimit/limit/iolimit.switching 1
+on property:persist.sys.boot.delay=1
+    write /dev/cpuset/background/cpus 4-7
+    write /dev/cpuset/easy-background/cpus 3-7
+#iolimit set default 60m/s, if you want to change this value, configure it in the project file directory
+on property:persist.sys.perf.background.iolimit=1
+    chmod 0666 /dev/iolimit/lightio/iolimit.read_limit
+    chmod 0666 /dev/iolimit/lightio/iolimit.write_limit
+    write /dev/iolimit/lightio/iolimit.read_limit 62914560
+    write /dev/iolimit/lightio/iolimit.write_limit 62914560
+    write /dev/iolimit/lightio/iolimit.switching 1
+on property:persist.sys.perf.background.iolimit=0
+    write /dev/iolimit/lightio/iolimit.read_limit 3145728
+    write /dev/iolimit/lightio/iolimit.write_limit 3145728
+    write /dev/iolimit/lightio/iolimit.switching 0    
+    #[TCT-ROM][PERF]End Added by yingbao.wang for background iolimit on  2019/06/20,20200319
