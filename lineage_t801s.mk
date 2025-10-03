@@ -19,5 +19,9 @@
 # lineage_t801s.mk for T801S
 #
 
-# Device identifier
-PRODUCT_
+# Inherit from product first
+$(call inherit-product, $(SRC_TARGET_DIR)/product/common_full_phone.mk)
+l
+# Inherit from the proprietary
+$(call inherit-product, vendor/tcl/t801s/t801s-vendor.mk)
+$(call inherit-product, vendor/tcl/t801s/vendor.mk
