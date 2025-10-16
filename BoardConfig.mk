@@ -3,20 +3,20 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/t801s
+DEVICE_PATH := device/tcl/t801s
 
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a55
+TARGET_CPU_VARIANT := kryo570
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a55
+TARGET_2ND_CPU_VARIANT := kryo570l
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := t801s,t801spro,t801sinpro
@@ -29,7 +29,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 
 # Kernel
-BOARD_KERNEL_CMDLINE := \
+BOARD_KERNEL_CMDLINE := \ll
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     lpm_levels.sleep_disabled=1 \
@@ -50,7 +50,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 BOARD_RAMDISK_USE_LZ4 := true
-
+l
 TARGET_KERNEL_CLANG_VERSION := r530567
 TARGET_KERNEL_SOURCE := kernel/tcl/t801s
 TARGET_KERNEL_CONFIG := t801s_defconfig
@@ -96,6 +96,9 @@ TARGET_USES_ION := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
+
+# Treble
+BOARD_USES_DYNAMIC_PARTITIONS := true
 
 # Partitions
 -include vendor/lineage/config/BoardConfigReservedSize.mk
