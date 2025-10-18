@@ -8,15 +8,15 @@ DEVICE_PATH := device/tcl/t801s
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
-TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI := arm64-v8apl
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := kryo570
+TARGET_CPU_VARIANT := cortex-a55
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := kryo570l
+TARGET_2ND_CPU_VARIANT := cortex-a55
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := t801s,t801spro,t801sinpro
@@ -148,7 +148,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2024-04-01
+VENDOR_SECURITY_PATCH := 2024-01-01
 
 # SELinux
 include device/qcom/sepolicy_vndr/SEPolicy.mk
