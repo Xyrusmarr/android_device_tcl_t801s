@@ -20,7 +20,7 @@ from extract_utils.main import (
 namespace_imports = [
     'device/tcl/t801s',
     'hardware/qcom-caf/common/libqti-perfd-client',
-    'hardware/qcom-caf/sm7225',
+    'hardware/qcom-caf/sm8250',
     'hardware/qcom-caf/wlan',
     'hardware/tcl',
     'vendor/qcom/opensource/commonsys/display',
