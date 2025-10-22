@@ -1,2 +1,1 @@
-#!./
-extract-files.py --regenerate_makefiles
+#!./extract-files.py --regenerate_makefiles
