@@ -24,4 +24,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-t801s
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="t801s-user 12 RKQ1.200826.002 V14.0.2.0.SJSMIXM release-keys" \
-    BuildFingerprint=TCL/t801s_global/t801s:12/RKQ1.200826.002/V14.0.2.0.SJSMIXM:user/release-keys
+    BuildFingerprint=TCL/T801S/Ottawa11/RKQ1.200826.002/V14.0.2.0.SJSMIXM:user/release-keys
