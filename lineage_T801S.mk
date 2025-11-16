@@ -15,13 +15,13 @@ $(call inherit-product, device/tcl/t801s/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_t801s
-PRODUCT_DEVICE := t801s
+PRODUCT_NAME := lineage_T81S
+PRODUCT_DEVICE := T801S
 PRODUCT_BRAND := TCL
 PRODUCT_MANUFACTURER := TCL
 
-PRODUCT_GMS_CLIENTID_BASE := android-t801s
+PRODUCT_GMS_CLIENTID_BASE := android-T801S
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="t801s-user 11 SKQ1.211006.001 5EGM release-keys" \
+    BuildDesc="T801S-user Ottawa11 SKQ1.211006.001 5EGM release-keys" \
     BuildFingerprint=TCL/T801S/Ottawa11/SKQ1.211001.001/5EGM:user/release-keys
